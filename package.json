@@ -9,8 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "^5.2.0",
+    "axios": "^1.3.2",
+    "mobx-react-lite": "^3.4.0",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router": "^6.8.1",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
@@ -20,7 +26,8 @@
     "vite": "^4.1.0"
   },
   "main": "index.js",
-  "author": "",
+  "author": "chenyixin@ray003 <chenyixin@rayvision.com>",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": "git@github.com:EWorf/realty_frontend.git"
 }
