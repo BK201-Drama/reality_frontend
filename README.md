@@ -138,82 +138,11 @@ css: {
 }
 ```
 
-## 命令
-
-### storybook
-
-启动 storybook 服务，进行组件 UI 测试
-
-```
-yarn storybook
-
-或者
-
-npm run storybook
-```
-
-### test
-
-启动`test`服务，基于`jest`进行组件、工具等的单元测试
-
-```
-yarn test
-
-或者
-
-npm run test
-```
-
-## 部署
-
-先构建出 dist 文件
-
-```
-yarn build
-
-或者
-
-npm run build
-```
-
-由于使用 history 路由，nginx 增加如下配置
-
-```
-location / {
- add_header Cache-Control 'no-store, no-cache'; // 设置不缓存
- try_files $uri $uri/ /index.html;
-}
-```
-
-## 代码提交规范
-
-整体使用 `commitlint`、`commitizen`、`husky` 来规范提交说明
-
-推荐使用命令来提交代码，通过问答的方式写 log
-
-```
-yarn commit
-
-或者
-
-npm run commit
-```
-
-如果使用 `git commit` 也会触发 `commit-msg` 钩子，需要符合 `"${type}: ${msg}"` 的提交规范
-
 ### 参考文献
 
 https://juejin.cn/post/7047682306294677512
 https://juejin.cn/post/7053730154710827045
 https://github.com/conventional-changelog/commitlint/#what-is-commitlint
-
-## 版本号管理
-
-默认情况下，工具会自动根据 主版本（ major ），次版本（ minor ） or 修订版（ patch ） 规则生成版本号，例如如果你 package.json 中的 version 为 1.0.0, 那么执行后版本号则是：1.0.1
-
-```
-standard-version
-```
 
 ### 参考
 
@@ -224,19 +153,3 @@ standard-version
 - [clean-architecture](https://phodal.github.io/clean-frontend/#clean-architecture--mvp-with-bff)
 - [Git | 前端门神 git-hooks 的使用](https://juejin.cn/post/7025880096791592968)
 - [TS + react 脚手架说明](https://juejin.cn/post/6953862743808016397#heading-2)
-
-## 推送包到服务器
-
-```bash
-# 1. 推送包
-# 推送测试环境包
-bash deploy_tc_test.sh
-# 推送正式环境包
-bash deploy_tc_prod.sh
-
-# 2. 查看 weblabel 的pods
-kubectl get pods -n welabel
-
-# 3. 找到需要实际需要推送的pod名字，删除对应的pod，会自动重启
-kubectl delete pod <对应的pod 名字> -n welabel
-```
