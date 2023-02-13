@@ -86,33 +86,6 @@ yarn insatll | npm i
 
 ### 2. 准备工作
 
-#### 2.1 配置 vscode
-
-新增 .editorconfig 配置文件（项目已包含不用新增，这里只是做标记）
-
-修改 editor.json，增加以下配置
-
-```
-{
- "editor.formatOnSave": true,
- "editor.codeActionsOnSave": {
- "source.fixAll.tslint": true
- },
- "editor.defaultFormatter": "esbenp.prettier-vscode",
- "[javascript]": {
- "editor.formatOnSave": true,
- "editor.defaultFormatter": "esbenp.prettier-vscode"
- },
- "[typescript]": {
- "editor.defaultFormatter": "esbenp.prettier-vscode"
- },
- "typescript.tsdk": "node_modules/typescript/lib",
- "[typescriptreact]": {
- "editor.defaultFormatter": "esbenp.prettier-vscode"
- }
-}
-```
-
 **vscode 安装插件**
 
 `eslint`、`prettier`
@@ -143,6 +116,7 @@ css: {
 https://juejin.cn/post/7047682306294677512
 https://juejin.cn/post/7053730154710827045
 https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+https://juejin.cn/post/7123612981895626760
 
 ### 参考
 
