@@ -90,27 +90,6 @@ yarn insatll | npm i
 
 `eslint`、`prettier`
 
-## 修改样式
-
-### 修改 Ant.d 样式
-
-在 `vite.config.ts` 中的 `css`中修改变量
-
-```
-css: {
- preprocessorOptions: {
- less: {
- modifyVars: {
- // 在此处通过修改 antd 的 less 变量来进行样式适配
- // 'primary-color': '#645AFF',
- // 'text-color': '#ff0000',
- },
- javascriptEnabled: true,
- },
- },
-}
-```
-
 ### 参考文献
 
 https://juejin.cn/post/7047682306294677512
