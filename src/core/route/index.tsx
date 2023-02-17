@@ -18,6 +18,9 @@ export const routers: Router[] = [
         component: lazy(() => import('../../pages/Welcome'))
       }
     ]
+  }, {
+    path: '/login',
+    component: lazy(() => import('../../pages/Login'))
   }
 ]
 
