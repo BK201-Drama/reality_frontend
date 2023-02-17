@@ -1,11 +1,14 @@
 import { Button, Form, Input } from 'antd'
+import navHelper from '../../core/route/navHelper'
 
 const { Item } = Form
 
 const Login = () => {
   const [formInstance] = Form.useForm()
+  const navInstance = navHelper()
   const finishLogin = (e: any) => {
     console.log(e)
+    navInstance.toWelcome()
   }
   return (
     <div className="w-[100vw] h-[100vh] bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 flex items-center justify-center">
