@@ -4,11 +4,13 @@ const navHelper = () => {
   const navigate = useNavigate()
   return {
     toLogin: () => {
-      console.log('???')
       navigate('/login')
     },
     toWelcome: () => {
       navigate('/welcome')
+    },
+    toKey: (key: string) => {
+      navigate(key)
     }
   }
 }
