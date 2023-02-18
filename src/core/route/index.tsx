@@ -37,6 +37,9 @@ export const routers: Router[] = [
       {
         path: '/my-message',
         component: lazy(() => import('../../pages/MyMessage'))
+      }, {
+        path: '/recharge',
+        component: lazy(() => import('../../pages/Recharge'))
       }
     ]
   }, {

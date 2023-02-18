@@ -12,7 +12,7 @@ interface IProps {
 const SideBar: FC<IProps> = ({ roleType = RoleType.user }) => {
   const nav = navHelper()
   return (
-    <Sider width={150}>
+    <Sider width={200}>
       <Menu
         mode="inline"
         onSelect={(e) => { nav.toKey(e?.key) }}

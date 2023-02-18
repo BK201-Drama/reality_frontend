@@ -10,8 +10,8 @@ const LayoutIndex = () => {
       <FHeader />
       <Layout>
         <SideBar />
-        <Layout className='p-[40px] bg-[#eee]'>
-          <Content className="p-[24px] m-[0px] min-h-[280px] bg-[#fff]">
+        <Layout className='bg-[#eee]'>
+          <Content className="m-[0px] min-h-[280px]">
             <Outlet />
           </Content>
         </Layout>
