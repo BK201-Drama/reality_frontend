@@ -16,6 +16,27 @@ export const routers: Router[] = [
       {
         path: '/welcome',
         component: lazy(() => import('../../pages/Welcome'))
+      },
+      {
+        path: '/room-message',
+        component: lazy(() => import('../../pages/RoomMsg'))
+      },
+      {
+        path: '/people-message',
+        component: lazy(() => import('../../pages/PeopleMsg'))
+      },
+      {
+        path: '/feedback',
+        component: lazy(() => import('../../pages/Feedback'))
+      }
+    ]
+  }, {
+    path: '',
+    component: () => <LayoutIndex />,
+    children: [
+      {
+        path: '/my-message',
+        component: lazy(() => import('../../pages/MyMessage'))
       }
     ]
   }, {

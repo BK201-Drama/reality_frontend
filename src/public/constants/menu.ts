@@ -1,6 +1,6 @@
 export const ADMIN_MENU = [
     {
-        key: "/house-message",
+        key: "/room-message",
         label: "房间信息"
     }, {
         key: '/people-message',
