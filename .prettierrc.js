@@ -1,29 +1,20 @@
 module.exports = {
-    // 让prettier使用eslint的代码格式进行校验
-    eslintIntegration: true,
-    // 缩进
-    tabWidth: 2,
-    // 使用tab还是空格
-    useTabs: false,
-    // 最大长度80个字符
-    printWidth: 200,
-    // 行末分号
-    semi: false,
-    // 单引号
-    singleQuote: true,
-    // JSX双引号
-    jsxSingleQuote: false,
-    // 尽可能使用尾随逗号（包括函数参数）
-    trailingComma: "none",
-    // 在对象文字中打印括号之间的空格。
-    bracketSpacing: true,
-    // > 标签放在最后一行的末尾，而不是单独放在下一行
-    jsxBracketSameLine: false,
-    // 箭头圆括号
-    arrowParens: "avoid",
-    // 在文件顶部插入一个特殊的 @format 标记，指定文件格式需要被格式化。
-    insertPragma: false,
-    // 行尾换行格式
-    endOfLine: "auto",
-    HTMLWhitespaceSensitivity: "ignore",
+    printWidth: 80, //单行长度
+    tabWidth: 2, //缩进长度
+    useTabs: false, //使用空格代替tab缩进
+    semi: true, //句末使用分号
+    singleQuote: true, //使用单引号
+    quoteProps: 'as-needed', //仅在必需时为对象的key添加引号
+    jsxSingleQuote: true, // jsx中使用单引号
+    trailingComma: 'all', //多行时尽可能打印尾随逗号
+    bracketSpacing: true, //在对象前后添加空格-eg: { foo: bar }
+    jsxBracketSameLine: true, //多属性html标签的‘>’折行放置
+    arrowParens: 'always', //单参数箭头函数参数周围使用圆括号-eg: (x) => x
+    requirePragma: false, //无需顶部注释即可格式化
+    insertPragma: false, //在已被preitter格式化的文件顶部加上标注
+    proseWrap: 'preserve', //不知道怎么翻译
+    htmlWhitespaceSensitivity: 'ignore', //对HTML全局空白不敏感
+    vueIndentScriptAndStyle: false, //不对vue中的script及style标签缩进
+    endOfLine: 'lf', //结束行形式
+    embeddedLanguageFormatting: 'auto', //对引用代码进行格式化
 };
