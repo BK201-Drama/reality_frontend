@@ -2,19 +2,23 @@
  * @Author: chenyixin@ray003 chenyixin@rayvision.com
  * @Date: 2023-02-18 01:22:09
  * @LastEditors: chenyixin@ray003 chenyixin@rayvision.com
- * @LastEditTime: 2023-02-19 22:28:47
+ * @LastEditTime: 2023-02-19 23:44:44
  * @FilePath: \realty_frontend\src\pages\Login\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import { Button, Form, Input, message } from 'antd'
 import { useEffect } from 'react'
 import navHelper from '../../core/route/navHelper'
-import { loginValidation, returnType } from '../../domains/Login/reposity'
+import { useStores } from '../../core/stores'
+import { returnType } from '../../domains/Login/reposity'
+import { RoleType } from '../../public/constants/role'
+import APIMapper from './index.mapper'
 
 const { Item } = Form
 
 const Login = () => {
   const [formInstance] = Form.useForm()
+  const { userStore } = useStores()
   const navInstance = navHelper()
   useEffect(() => {
     formInstance.setFieldsValue({
@@ -31,17 +35,21 @@ const Login = () => {
         data: {
           data: {
             id,
-            loginType,
+            loginType: roleType,
           }
         }
       } = res
       // 存储自己是不是管理员
-      localStorage.setItem('roleType', loginType)
-      loginValidation({
+      localStorage.setItem('roleType', roleType)
+      APIMapper?.[roleType as RoleType]?.({
         ...e,
         id,
       }).then((res: any) => {
+        const {
+          data: data
+        } = res
         message.success('登录成功')
+        console.log(data)
         navInstance.toWelcome()
       })
     })

@@ -5,3 +5,9 @@ export const loginValidation = (params: {
     userName: string;
     password: string;
 }) => post('/login/loginValidation', params)
+
+export const managerValidation = (params: {
+    id: number,
+    userName: string;
+    password: string;
+}) => post('/managerValidation', params)
