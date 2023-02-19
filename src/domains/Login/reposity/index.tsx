@@ -8,6 +8,6 @@ export const loginValidation = (params: {
 
 export const managerValidation = (params: {
     id: number,
-    userName: string;
-    password: string;
-}) => post('/managerValidation', params)
+    managerName: string;
+    managerPassword: string;
+}) => post('/login/managerValidation', params)

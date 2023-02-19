@@ -2,7 +2,7 @@
  * @Author: chenyixin@ray003 chenyixin@rayvision.com
  * @Date: 2023-02-18 01:22:09
  * @LastEditors: chenyixin@ray003 chenyixin@rayvision.com
- * @LastEditTime: 2023-02-19 23:44:44
+ * @LastEditTime: 2023-02-20 00:18:25
  * @FilePath: \realty_frontend\src\pages\Login\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -41,15 +41,25 @@ const Login = () => {
       } = res
       // 存储自己是不是管理员
       localStorage.setItem('roleType', roleType)
-      APIMapper?.[roleType as RoleType]?.({
-        ...e,
-        id,
-      }).then((res: any) => {
+      const params = {
+        [RoleType.user]: {
+          ...e,
+          id,
+        },
+        [RoleType.admin]: {
+          id,
+          managerName: e.userName,
+          managerPassword: e.password,
+        }
+      }
+      const myRole = roleType as RoleType
+      APIMapper?.[myRole]?.(params?.[myRole] as any).then((res: any) => {
         const {
           data: data
         } = res
         message.success('登录成功')
-        console.log(data)
+        
+        userStore.setUserMessage(data?.data ?? {})
         navInstance.toWelcome()
       })
     })
