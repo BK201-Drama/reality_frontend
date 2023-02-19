@@ -36,7 +36,7 @@ const Login = () => {
         }
       } = res
       // 存储自己是不是管理员
-      localStorage.setItem('loginType', loginType)
+      localStorage.setItem('roleType', loginType)
       loginValidation({
         ...e,
         id,
