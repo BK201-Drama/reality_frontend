@@ -1,14 +1,17 @@
-import { Button, Form, Input } from "antd"
+import { Button, Form, Input, message } from "antd"
 import { useStores } from "../../core/stores"
+import { feedBack } from "../../domains/feedBack/reposity"
 
 const { Item } = Form
 
 const FeedBack = () => {
   const { userStore } = useStores()
   const finish = (e: { feedback?: string }) => {
-    console.log({
+    feedBack({
       ...e,
       userId: userStore.id,
+    }).then(() => {
+      message.success("反馈成功")
     })
   }
   return (

@@ -24,10 +24,9 @@ export const routers: Router[] = [
       {
         path: '/people-message',
         component: lazy(() => import('../../pages/PeopleMsg'))
-      },
-      {
-        path: '/feedback',
-        component: lazy(() => import('../../pages/Feedback'))
+      }, {
+        path: '/all-feedback',
+        component: lazy(() => import('../../pages/AllFeedback'))
       }
     ]
   }, {
@@ -40,6 +39,9 @@ export const routers: Router[] = [
       }, {
         path: '/recharge',
         component: lazy(() => import('../../pages/Recharge'))
+      }, {
+        path: '/feedback',
+        component: lazy(() => import('../../pages/Feedback'))
       }
     ]
   }, {
