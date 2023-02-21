@@ -21,7 +21,7 @@ function RTablePropConfig<T>(tableProps?: TableProps<T>) {
 }
 
 interface ITable {
-  rowKey?: 'string';
+  rowKey?: string;
   columns?: any[];
   tableProps?: any
 }

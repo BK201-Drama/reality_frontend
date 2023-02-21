@@ -1,4 +1,4 @@
 export interface IPage {
-    pageNum: number;
+    current: number;
     pageSize: number;
 }

@@ -3,4 +3,4 @@ import { IPage } from "../../../types/table.type";
 
 export const feedBack = (params: { userId: number; feedback?: string }) => post('/user/feedback', params)
 
-export const allFeedback = (params: IPage) => post('/manager/seeFeedback', params)
+export const allFeedback = (params: { pageNum: number; pageSize: number }) => post('/manager/seeFeedback', params)
