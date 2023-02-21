@@ -2,7 +2,7 @@
  * @Author: chenyixin@ray003 chenyixin@rayvision.com
  * @Date: 2023-02-18 01:35:04
  * @LastEditors: chenyixin@ray003 chenyixin@rayvision.com
- * @LastEditTime: 2023-02-18 13:22:24
+ * @LastEditTime: 2023-02-21 23:31:00
  * @FilePath: \realty_frontend\src\styles\antd.less
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -27,4 +27,15 @@ h2 {
 
 :where(.css-dev-only-do-not-override-diro6f).ant-layout .ant-layout-header {
     background: linear-gradient(to right, #9198e5, #008c8c) !important;
+}
+
+.ant-table-content {
+    .ant-table-tbody {
+        .ant-table-row.ant-table-row-level-0 {
+            height: 40px !important;
+            .ant-table-cell {
+                padding: 8px !important;
+            }
+        }
+    }   
 }

@@ -16,7 +16,7 @@ const { Content } = Layout;
 const LayoutIndex = () => {
   const roleType = Number(localStorage.getItem('roleType') ?? RoleType.user)
   return (
-    <Layout className='min-h-full h-[100vh]'>
+    <Layout className='min-h-[100vh] h-full'>
       <FHeader />
       <Layout>
         <SideBar roleType={roleType} />

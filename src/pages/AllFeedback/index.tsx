@@ -27,7 +27,7 @@ const AllFeedback = () => {
   const { tableProps } = useAntdTable(getTableData)
   const columns = Columns()
   return (
-    <div className="h-full flex flex-col gap-[5px] items-center mt-[5px]">
+    <div className="h-full flex flex-col gap-[20px] items-center pt-[20px]">
       <h2>反馈列表</h2>
       <RTable columns={columns} tableProps={tableProps} rowKey="id" />
     </div>
