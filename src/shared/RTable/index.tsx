@@ -29,7 +29,7 @@ const RTable: FC<ITable> = ({ rowKey, columns, tableProps }) => {
   const dataSource = (RTablePropConfig(tableProps ?? {})?.dataSource ?? []) as any[]
   const realTableProps = (RTablePropConfig(tableProps ?? {}) ?? {}) as any
   return (
-    <Table rowKey={rowKey ?? ''} columns={columns ?? []} dataSource={dataSource} {...realTableProps} />
+    <Table rowKey={rowKey ?? ''} columns={columns ?? []} dataSource={dataSource} {...realTableProps} className="w-[1000px]" />
   )
 }
 

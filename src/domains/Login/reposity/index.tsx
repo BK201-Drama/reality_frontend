@@ -11,3 +11,9 @@ export const managerValidation = (params: {
     managerName: string;
     managerPassword: string;
 }) => post('/login/managerValidation', params)
+
+export const regist = (params: {
+    userName: string;
+    userPassword:string;
+    userRealName: string;
+}) => post('/user/register', params)
