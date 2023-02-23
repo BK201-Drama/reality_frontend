@@ -17,3 +17,15 @@ export const regist = (params: {
     userPassword:string;
     userRealName: string;
 }) => post('/user/register', params)
+
+export const updatePwd = (params: {
+    id: number;
+    newPassword: string;
+}) => post('/user/updatePassword', params)
+
+export const getUserInfo = (params: {
+    id: number;
+    pageNum: number;
+    pageSize: number;
+}) => post('/user/getUserInfo', params)
+

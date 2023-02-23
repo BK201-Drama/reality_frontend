@@ -11,16 +11,19 @@ class UserStore {
     userName?: string = ''
     userBalance?: number = NUMBER_ZERO
     userRealName?: string = ''
+    userPassword?: string = ''
 
     setUserMessage = ({
         userName,
         userBalance,
         userRealName,
+        userPassword,
         id,
     }: {
         userName: string;
         userBalance: number;
         userRealName: string;
+        userPassword?: string,
         id: number;
     }) => {
         this.userName = userName
@@ -35,6 +38,7 @@ class UserStore {
         this.userBalance = NUMBER_ZERO
         this.userRealName = ''
     }
+
 }
 
 export const userStore = new UserStore()
