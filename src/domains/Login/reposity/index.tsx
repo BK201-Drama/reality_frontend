@@ -29,3 +29,7 @@ export const getUserInfo = (params: {
     pageSize: number;
 }) => post('/user/getUserInfo', params)
 
+export const getAllUserInfo = (params: {
+    pageNum: number;
+    pageSize: number;
+}) => post('/manager/getAllUserInfo', params)
