@@ -1,6 +1,7 @@
 import { useAntdTable } from "ahooks"
 import { useStores } from "../../core/stores"
 import { getUserInfo } from "../../domains/Login/reposity"
+import UpdateModal from "../../features/UpdateModal"
 import RTable from "../../shared/RTable"
 import { IPage } from "../../types/table.type"
 import columns from "./column.config"
@@ -44,21 +45,23 @@ const Detail = () => {
       }
     })
   }
-  const { tableProps } = useAntdTable(getTableData)
+  const { tableProps, refresh } = useAntdTable(getTableData)
   return (
     <>
-      <div className="bg-[#fff] m-[20px] p-[15px]">
+      <div className="bg-[#fff] m-[20px] p-[15px] rounded-[8px]">
         <h2>个人信息</h2>
         <div className="pt-[20px]">
           <div>
             账号：{userName}
           </div>
-          <div>密码：{userPassword}</div>
+          <UpdateModal id={id} render={(click) => {
+            return <a className="text-[blue]" onClick={click}>修改密码</a>
+          }} onOk={refresh} />
           <div>余额：{userBalance}</div>
           <div>姓名：{userRealName}</div>
         </div>
       </div>
-      <div className="bg-[#fff] m-[20px] p-[15px] flex flex-col gap-[10px]">
+      <div className="bg-[#fff] m-[20px] p-[15px] flex flex-col gap-[10px] rounded-[8px]">
         <h2>我的租房</h2>
         <RTable columns={columns} tableProps={tableProps} />
       </div>

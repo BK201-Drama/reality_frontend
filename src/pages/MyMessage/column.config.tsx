@@ -25,11 +25,6 @@ const columns = [
         title: '房间结束日期'
     },
     {
-        key: 'roomBeginTime',
-        dataIndex: 'roomBeginTime',
-        title: '房间起始居住日'
-    },
-    {
         key: 'roomBill',
         dataIndex: 'roomBill',
         title: '水电费(已花)'
