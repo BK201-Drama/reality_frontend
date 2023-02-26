@@ -13,7 +13,7 @@ const formConfig = [
     label: '房间号',
   }, {
     name: 'roomStatus',
-    element: <Select options={options} />,
+    element: <Select options={options} allowClear />,
     label: '房间号',
   }
 ]
