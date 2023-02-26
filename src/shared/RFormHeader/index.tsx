@@ -24,7 +24,7 @@ const RFormHeader: FC<IProps> = ({ formInstance, reset, submit, formConfig }) =>
   }
 
   return (
-    <Form form={form}>
+    <Form form={form} className="pt-[10px]">
       <Row gutter={24}>
         {
           formConfig.map((formItem: FormConfig, index: number) => {

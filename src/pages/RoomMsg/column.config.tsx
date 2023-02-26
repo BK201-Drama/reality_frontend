@@ -1,5 +1,6 @@
 import _ from "lodash"
 import moment from "moment"
+import { ROOM_STATUS, STATUS } from "../../public/constants/room"
 
 const Columns = () => {
     return [
@@ -17,10 +18,10 @@ const Columns = () => {
             title: '每日租金',
             render: (roomRentPerDay: number | null) => roomRentPerDay ?? '-'
         }, {
-            id: 'roomRentPerDay',
-            dataIndex: 'roomRentPerDay',
+            id: 'roomStatus',
+            dataIndex: 'roomStatus',
             title: '每日租金',
-            render: (roomRentPerDay: number | null) => roomRentPerDay ?? '-'
+            render: (roomStatus: STATUS) => ROOM_STATUS?.[roomStatus] ?? '-'
         }, {
             id: 'roomBeginTime',
             dataIndex: 'roomBeginTime',
