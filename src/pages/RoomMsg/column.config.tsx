@@ -20,7 +20,7 @@ const Columns = () => {
         }, {
             id: 'roomStatus',
             dataIndex: 'roomStatus',
-            title: '每日租金',
+            title: '房间状态',
             render: (roomStatus: STATUS) => ROOM_STATUS?.[roomStatus] ?? '-'
         }, {
             id: 'roomBeginTime',
