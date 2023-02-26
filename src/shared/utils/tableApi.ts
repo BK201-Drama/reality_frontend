@@ -1,9 +1,10 @@
 import { IPage } from "../../types/table.type"
 
-const getTableData = (myApi: any) => (pages: IPage) => {
+const getTableData = (myApi: any) => (pages: IPage, formData: any) => {
     const params = {
         pageNum: pages.current,
-        pageSize: pages.pageSize
+        pageSize: pages.pageSize,
+        ...formData,
     }
     return myApi(params).then((res: any) => {
         const {
