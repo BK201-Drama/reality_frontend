@@ -1,9 +1,9 @@
-import { observer } from 'mobx-react-lite'
 import { createContext, useContext } from 'react'
+import { userStore, userStoreTag } from '../../domains/Login/stores'
 
 function createStores () {
     return {
-
+        [userStoreTag]: userStore
     }
 }
 

@@ -1,4 +1,4 @@
 export const enum RoleType {
-    user,
-    admin,
+    user = 1,
+    admin = 2,
 }
