@@ -1,6 +1,9 @@
 import { useAntdTable } from "ahooks"
+import { Button } from "antd"
 import { useStores } from "../../core/stores"
+import { visCharges } from "../../domains/charge/reposity"
 import { getUserInfo } from "../../domains/Login/reposity"
+import { userStore } from "../../domains/Login/stores"
 import UpdateModal from "../../features/UpdateModal"
 import RTable from "../../shared/RTable"
 import { IPage } from "../../types/table.type"
@@ -46,6 +49,17 @@ const Detail = () => {
     })
   }
   const { tableProps, refresh } = useAntdTable(getTableData)
+
+  const visCharge = (id: number) => {
+    visCharges({
+      userId: userStore.id,
+      roomId: id,
+      bill: 50,
+    }).then((e) => {
+      refresh()
+    })
+  }
+
   return (
     <>
       <div className="bg-[#fff] m-[20px] p-[15px] rounded-[8px]">
@@ -63,7 +77,7 @@ const Detail = () => {
       </div>
       <div className="bg-[#fff] m-[20px] p-[15px] flex flex-col gap-[10px] rounded-[8px]">
         <h2>我的租房</h2>
-        <RTable columns={columns} tableProps={tableProps} />
+        <RTable columns={columns(visCharge)} tableProps={tableProps} />
       </div>
     </>
   )

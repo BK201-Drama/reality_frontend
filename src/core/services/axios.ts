@@ -3,7 +3,7 @@ import originAxios from 'axios'
 
 // 创建请求实例
 const instance = originAxios.create({
-    baseURL: 'http://localhost:8080/api',
+    baseURL: 'http://10.39.10.199:8080/api',
     timeout: 30000,
 })
 
