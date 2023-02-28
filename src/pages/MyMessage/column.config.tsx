@@ -41,10 +41,15 @@ const columns = (visCharge?: any) => {
       key: 'id',
       dataIndex: 'id',
       title: '操作',
-      render: (id: number) => <Button onClick={() => {
-        visCharge?.(id)
-      }}>模拟水电费-50</Button>
-    }
+      render: (id: number) => (
+        <>
+          <Button onClick={() => {
+          visCharge?.(id)
+        }}>模拟水电费-50</Button>
+        <Button onClick={() => {}}>延长租期</Button>
+        </>
+      )
+    },
   ]
 }
 

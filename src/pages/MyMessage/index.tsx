@@ -4,6 +4,7 @@ import { useStores } from "../../core/stores"
 import { visCharges } from "../../domains/charge/reposity"
 import { getUserInfo } from "../../domains/Login/reposity"
 import { userStore } from "../../domains/Login/stores"
+import { prolong } from "../../domains/room/reposity"
 import UpdateModal from "../../features/UpdateModal"
 import RTable from "../../shared/RTable"
 import { IPage } from "../../types/table.type"
@@ -57,6 +58,14 @@ const Detail = () => {
       bill: 50,
     }).then((e) => {
       refresh()
+    })
+  }
+
+  const prolongRoom = (id: number, bill: number) => {
+    prolong({
+      userId: userStore.id,
+      roomId: id,
+      bill,
     })
   }
 
