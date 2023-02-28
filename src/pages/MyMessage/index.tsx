@@ -77,7 +77,7 @@ const Detail = () => {
       </div>
       <div className="bg-[#fff] m-[20px] p-[15px] flex flex-col gap-[10px] rounded-[8px]">
         <h2>我的租房</h2>
-        <RTable columns={columns()} tableProps={tableProps} />
+        <RTable columns={columns(visCharge)} tableProps={tableProps} />
       </div>
     </>
   )
