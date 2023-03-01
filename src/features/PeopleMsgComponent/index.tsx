@@ -9,7 +9,7 @@ import getTableData from '../../shared/utils/tableApi';
 interface IProps {
   columns: any[];
   formConfigs: any[];
-  other: (refresh: any) => any;
+  other?: (refresh: any) => any;
 }
 const PeopleMsgComponent: FC<IProps> = ({ columns, formConfigs, other }) => {
   const [formInstance] = Form.useForm();

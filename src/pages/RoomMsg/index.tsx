@@ -9,7 +9,7 @@ import formConfig from "./form.config"
 
 const RoomMsg = () => {
   const [formInstance] = Form.useForm()
-  const { tableProps, search } = useAntdTable(getTableData(getAllRoomData), {
+  const { tableProps, search, refresh } = useAntdTable(getTableData(getAllRoomData), {
     form: formInstance
   })
   const { submit, reset } = search
@@ -18,7 +18,7 @@ const RoomMsg = () => {
       <h2>房间信息</h2>
       <RFormHeader formInstance={formInstance} formConfig={formConfig} submit={submit} reset={reset} />
       <div className="flex gap-[5px] flex-col justify-center items-center">
-        <RTable columns={Columns()} tableProps={tableProps} rowKey="id" />  
+        <RTable columns={Columns(refresh)} tableProps={tableProps} rowKey="id" />  
       </div>
     </div>
   )
