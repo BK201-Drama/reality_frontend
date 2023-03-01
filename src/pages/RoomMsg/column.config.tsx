@@ -28,6 +28,12 @@ const Columns = (refresh: any) => {
       render: (roomStatus: STATUS) => ROOM_STATUS?.[roomStatus] ?? '-',
     },
     {
+      id: 'userRealName',
+      dataIndex: 'userRealName',
+      title: '预订人',
+      render: (userRealName?: string) => userRealName ?? '-',
+    },
+    {
       id: 'roomBeginTime',
       dataIndex: 'roomBeginTime',
       title: '房间预定时间',

@@ -1,6 +1,11 @@
+import { Result } from "antd"
+
 const Welcome = () => {
   return (
-    <div>Welcome</div>
+    <Result
+      status="success"
+      title="欢迎来到枫叶公寓"
+    />
   )
 }
 
