@@ -1,4 +1,6 @@
 import { Button } from 'antd';
+import _ from 'lodash';
+import moment from 'moment';
 import ProlongModal from '../../features/ProlongModal';
 
 const columns = (visCharge?: any, prolongRoom?: any) => {
@@ -22,11 +24,13 @@ const columns = (visCharge?: any, prolongRoom?: any) => {
       key: 'roomBeginTime',
       dataIndex: 'roomBeginTime',
       title: '房间起始居住日',
+      render: (time: number | null) => !_.isNil(time) ? moment(time).format("MMMM Do YYYY h:mm:ss") : '-'
     },
     {
       key: 'roomEndTime',
       dataIndex: 'roomEndTime',
       title: '房间结束日期',
+      render: (time: number | null) => !_.isNil(time) ? moment(time).format("MMMM Do YYYY h:mm:ss") : '-'
     },
     {
       key: 'roomBill',
@@ -55,7 +59,7 @@ const columns = (visCharge?: any, prolongRoom?: any) => {
               return <Button onClick={click}>延长租期</Button>;
             }}
             onOk={(bill) => {
-              prolongRoom(id, bill)
+              return prolongRoom(id, bill)
             }}
           />
         </div>

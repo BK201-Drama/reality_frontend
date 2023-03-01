@@ -7,8 +7,9 @@ const rules = [{ required: true, message: '请输入' }]
 
 interface IProps {
   render: (click: (e: any) => any) => ReactNode
+  refresh: any
 }
-const RegistModal: FC<IProps> = ({ render }) => {
+const RegistModal: FC<IProps> = ({ render, refresh }) => {
   const [visible, setVisible] = useState<boolean>(false)
   const [formInstance] = Form.useForm()
   const ok = () => {
@@ -16,6 +17,7 @@ const RegistModal: FC<IProps> = ({ render }) => {
       regist(res).then(() => {
         setVisible(false)
         message.success("注册成功")
+        refresh?.()
       })
     })
   }

@@ -18,7 +18,7 @@ const RoomMsg = () => {
       <h2>房间信息</h2>
       <RFormHeader formInstance={formInstance} formConfig={formConfig} submit={submit} reset={reset} />
       <div className="flex gap-[5px] flex-col justify-center items-center">
-        <RTable columns={Columns()} tableProps={tableProps} />  
+        <RTable columns={Columns()} tableProps={tableProps} rowKey="id" />  
       </div>
     </div>
   )

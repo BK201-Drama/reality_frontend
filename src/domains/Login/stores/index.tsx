@@ -17,16 +17,16 @@ class UserStore {
         userName,
         userBalance,
         userRealName,
-        userPassword,
         id,
+        managerName,
     }: {
         userName: string;
         userBalance: number;
         userRealName: string;
-        userPassword?: string,
         id: number;
+        managerName?: string;
     }) => {
-        this.userName = userName
+        this.userName = userName ?? managerName
         this.userBalance = userBalance
         this.userRealName = userRealName
         this.id = id

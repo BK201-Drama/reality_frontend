@@ -17,7 +17,10 @@ const ProlongModal: FC<IProps> = ({ render, onOk }) => {
 
   const ok = () => {
     formInstance?.validateFields().then((res) => {
-      onOk?.(res?.bill)
+      onOk?.(res?.bill)?.then(() => {
+        message.success("续租成功")
+        cancel()
+      })
     })
   }
   return (

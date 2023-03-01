@@ -1,5 +1,4 @@
 import { useAntdTable } from "ahooks"
-import { Button } from "antd"
 import { useStores } from "../../core/stores"
 import { visCharges } from "../../domains/charge/reposity"
 import { getUserInfo } from "../../domains/Login/reposity"
@@ -12,7 +11,7 @@ import columns from "./column.config"
 
 const Detail = () => {
   const { userStore: {
-    id, userName, userBalance, userRealName, userPassword, setUserMessage
+    id, userName, userBalance, userRealName, setUserMessage
   } } = useStores()
   const getTableData = (pages: IPage) => {
     const params = {
@@ -39,7 +38,6 @@ const Detail = () => {
       setUserMessage({
         id,
         userName,
-        userPassword,
         userBalance,
         userRealName,
       })
@@ -61,11 +59,11 @@ const Detail = () => {
     })
   }
 
-  const prolongRoom = (id: number, bill: number) => {
-    prolong({
+  const prolongRoom = (id: number, daysNum: number) => {
+    return prolong({
       userId: userStore.id,
       roomId: id,
-      bill,
+      daysNum,
     })
   }
 
@@ -86,7 +84,7 @@ const Detail = () => {
       </div>
       <div className="bg-[#fff] m-[20px] p-[15px] flex flex-col gap-[10px] rounded-[8px]">
         <h2>我的租房</h2>
-        <RTable columns={columns(visCharge, prolongRoom)} tableProps={tableProps} />
+        <RTable columns={columns(visCharge, prolongRoom)} tableProps={tableProps} rowKey="id" />
       </div>
     </>
   )
