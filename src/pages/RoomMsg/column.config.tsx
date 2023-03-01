@@ -18,7 +18,7 @@ const Columns = (refresh: any) => {
     {
       id: 'roomRentPerDay',
       dataIndex: 'roomRentPerDay',
-      title: '每日租金',
+      title: '每月租金',
       render: (roomRentPerDay: number | null) => roomRentPerDay ?? '-',
     },
     {

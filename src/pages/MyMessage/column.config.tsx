@@ -40,7 +40,7 @@ const columns = (visCharge?: any, prolongRoom?: any) => {
     {
       key: 'roomRentPerDay',
       dataIndex: 'roomRentPerDay',
-      title: '每日租金',
+      title: '每月租金',
     },
     {
       key: 'id',

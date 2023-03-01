@@ -28,7 +28,7 @@ const PeopleModal: FC<IProps> = ({ render, id, refresh }) => {
         footer={null}>
         <PeopleMsgComponent columns={column} formConfigs={formConfigs} />
         <Form form={formInstance}>
-          <Form.Item name="daysNum" label="预订天数">
+          <Form.Item name="daysNum" label="预订月数">
             <InputNumber />
           </Form.Item>
         </Form>

@@ -26,7 +26,7 @@ export const columns = (roomId: number, daysNum?: number, cancel?:() => any) => 
       <a className='text-[blue]' onClick={() => {
         console.log(daysNum)
         if (_.isNil(daysNum)) {
-          message.error("请输入预订天数")
+          message.error("请输入预订月数")
           return
         }
         booking({

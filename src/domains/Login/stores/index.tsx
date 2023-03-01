@@ -13,23 +13,28 @@ class UserStore {
     userRealName?: string = ''
     userPassword?: string = ''
 
+    roomList?: any[] = []
+
     setUserMessage = ({
         userName,
         userBalance,
         userRealName,
         id,
         managerName,
+        roomList,
     }: {
         userName: string;
         userBalance: number;
         userRealName: string;
         id: number;
         managerName?: string;
+        roomList?: any[],
     }) => {
         this.userName = userName ?? managerName
         this.userBalance = userBalance
         this.userRealName = userRealName
         this.id = id
+        this.roomList = roomList
     }
 
     resetUserMessage = () => {

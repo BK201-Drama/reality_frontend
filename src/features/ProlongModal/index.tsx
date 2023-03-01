@@ -25,10 +25,10 @@ const ProlongModal: FC<IProps> = ({ render, onOk }) => {
   }
   return (
     <div>
-      <Modal open={visible} onOk={ok} onCancel={cancel} title="注册">
+      <Modal open={visible} onOk={ok} onCancel={cancel} title="延长租期">
         <Form form={formInstance} className="pt-[20px]">
           <Item name="bill" rules={rules}>
-            <InputNumber addonBefore="续租天数" addonAfter="天" min={1} />
+            <InputNumber addonBefore="续租" addonAfter="月" min={1} max={60} />
           </Item>
         </Form>
       </Modal>

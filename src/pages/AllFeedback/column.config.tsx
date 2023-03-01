@@ -16,6 +16,11 @@ export const Columns = () => {
             key: 'id',
         },
         {
+          title: '房间号',
+          dataIndex: 'roomNumber',
+          key: 'roomNumber',
+      },
+        {
             title: '反馈',
             dataIndex: 'feedback',
             key: 'feedback',

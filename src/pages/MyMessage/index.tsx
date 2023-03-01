@@ -25,7 +25,6 @@ const Detail = () => {
           data: {
             id,
             userName,
-            userPassword,
             userBalance,
             userRealName,
             roomPageInfo: {
@@ -40,6 +39,7 @@ const Detail = () => {
         userName,
         userBalance,
         userRealName,
+        roomList: list,
       })
       return {
         list,
