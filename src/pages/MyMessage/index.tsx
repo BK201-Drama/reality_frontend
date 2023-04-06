@@ -1,9 +1,9 @@
 import { useAntdTable } from "ahooks"
-import { Button } from "antd"
 import { useStores } from "../../core/stores"
 import { visCharges } from "../../domains/charge/reposity"
 import { getUserInfo } from "../../domains/Login/reposity"
 import { userStore } from "../../domains/Login/stores"
+import { prolong } from "../../domains/room/reposity"
 import UpdateModal from "../../features/UpdateModal"
 import RTable from "../../shared/RTable"
 import { IPage } from "../../types/table.type"
@@ -11,7 +11,7 @@ import columns from "./column.config"
 
 const Detail = () => {
   const { userStore: {
-    id, userName, userBalance, userRealName, userPassword, setUserMessage
+    id, userName, userBalance, userRealName, setUserMessage
   } } = useStores()
   const getTableData = (pages: IPage) => {
     const params = {
@@ -25,7 +25,6 @@ const Detail = () => {
           data: {
             id,
             userName,
-            userPassword,
             userBalance,
             userRealName,
             roomPageInfo: {
@@ -38,9 +37,9 @@ const Detail = () => {
       setUserMessage({
         id,
         userName,
-        userPassword,
         userBalance,
         userRealName,
+        roomList: list,
       })
       return {
         list,
@@ -57,6 +56,14 @@ const Detail = () => {
       bill: 50,
     }).then((e) => {
       refresh()
+    })
+  }
+
+  const prolongRoom = (id: number, daysNum: number) => {
+    return prolong({
+      userId: userStore.id,
+      roomId: id,
+      daysNum,
     })
   }
 
@@ -77,7 +84,7 @@ const Detail = () => {
       </div>
       <div className="bg-[#fff] m-[20px] p-[15px] flex flex-col gap-[10px] rounded-[8px]">
         <h2>我的租房</h2>
-        <RTable columns={columns(visCharge)} tableProps={tableProps} />
+        <RTable columns={columns(visCharge, prolongRoom)} tableProps={tableProps} rowKey="id" />
       </div>
     </>
   )

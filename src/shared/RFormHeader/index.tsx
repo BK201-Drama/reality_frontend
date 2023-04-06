@@ -35,8 +35,6 @@ const RFormHeader: FC<IProps> = ({ formInstance, reset, submit, formConfig }) =>
             </Col>
           })
         }
-      </Row>
-      <Row gutter={24} justify="end" style={{ marginBottom: 24, paddingRight: 10 }}>
         <Button type="primary" onClick={onSubmit}>
           搜索
         </Button>
